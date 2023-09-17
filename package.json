@@ -1,0 +1,29 @@
+{
+  "name": "BookDirectory-Api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "set NODE_ENV=production&&node ./bin/www ",
+    "dev": "set NODE_ENV=development&&nodemon ./bin/www ",
+    "test": "mocha 'test\\test.js' "
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "connect-pg-simple": "^9.0.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.3.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.3",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^11.5.4"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "superagent": "^8.1.2",
+    "supertest": "^6.3.3"
+  }
+}
