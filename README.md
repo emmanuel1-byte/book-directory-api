@@ -1,5 +1,5 @@
 # BookDirectory-Api
-This is a Book Directory API built with Nodejs and express js
+This is a Book Directory API built with Nodejs + express js
 
 # Pre-requisites
 - install [Nodejs](https://nodejs.org/en/blog/release/v18.16.1) version v18.16.1
