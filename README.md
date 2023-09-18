@@ -18,15 +18,30 @@ This is a Book Directory API built with Nodejs and express js
   
   ` npm start  `
 
-# Technology used
-- Nodejs
-- Express js
-- postgresql
-- passportjs
-- pg-session
-- pg-promise
-- supertest
-- mocha
+# Features
+- SignUp
+- Login
+- Logout
+- session based Authentication
+
+# Basic CRUD
+- Add a Book
+- Get all Books
+- Get a Book
+- Update a Book
+- Delete a Book
+
+# Testing
+- all Endpoints are tested
+
+# Major Dependencies
+- Express js - the core of the API
+- Postgresql - the Relational database mangement system used
+- pg-promise - the database driver for postgresql
+- supertest & mocha - for testing
+- pg-session - the session store
+- passportjs - the Authentication middleware
+
 
 # Api Documentation
 -  https://www.postman.com/cloudy-escape-698934/workspace/emmanuel/collection/24822385-ae4afb23-91fc-414e-9538-33dc3cd80493
