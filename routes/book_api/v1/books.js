@@ -3,6 +3,7 @@ const router = express.Router();
 const userHandler = require('../../../controller/user');
 const authHandler = require('../../../controller/auth');
 
+
 /* Authentication */
 router.get('/', authHandler.main);
 

@@ -9,7 +9,7 @@ var session = require('express-session');
 var passport = require('passport');
 var pg_session = require('connect-pg-simple')(session);
 require('dotenv').config();
-// var  bodyParser = require('body-parser');
+var cors = require('cors');
 
 
 //Db connect
@@ -42,6 +42,13 @@ app.use(session({
 app.use(passport.authenticate('session'));
 
 app.use('/', booksRouter);
+
+/* 
+CORS Enabled
+resource from this server can be accessed by any origin 
+*/
+app.options('*', cors());
+app.use(cors());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
