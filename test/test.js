@@ -15,7 +15,7 @@ describe('Test the root path', ()=>{
 /* Authentication endpoints test */
 
 describe('POST /signup',()=>{
-   it('responds with json', ()=>{
+   it('should create a new user account ', ()=>{
     return request(app)
     .post('/api/v1/books/signup')
     .send({ firstname: "Emmanuel", lastname:"hilary", username:"snrMan@1", password:"blackberry"})
@@ -28,7 +28,7 @@ describe('POST /signup',()=>{
 
 
 describe('POST /login', ()=>{
-    it('responds with json', ()=>{
+    it('should log the user into his account', ()=>{
         return request(app)
         .post('/api/v1/books/login')
         .send({ username:"snrMan@1", password:"blackberry"})
@@ -40,7 +40,7 @@ describe('POST /login', ()=>{
 
 
 describe('POST /logout', ()=>{
-    it('it responds with json', ()=>{
+    it('should log the user out of his account', ()=>{
         return request(app)
         .post('/api/v1/books/logout')
         .expect(200);
@@ -50,7 +50,7 @@ describe('POST /logout', ()=>{
 
 /* Book Operation endpoints test */
 describe('GET /getBooks', ()=>{
-    it('it responds with json', ()=>{
+    it('should show all books available', ()=>{
         return request(app)
         .get('/api/v1/books/getBooks')
         .expect(200)
@@ -58,7 +58,7 @@ describe('GET /getBooks', ()=>{
 })
 
 describe('POST /addBook', ()=>{
-    it("it responds with json", ()=>{
+    it("should add a book", ()=>{
         return request(app)
         .post('/api/v1/books/addBook')
         .send({ author_name: "William Shakespare", author_email: "WilliamShakes10@gmail.com", book_title: "She stoops to Conquer"})
@@ -69,7 +69,7 @@ describe('POST /addBook', ()=>{
 })
 
 describe('GET /findBooks/:id', ()=>{
-    it('responds with json', ()=>{
+    it('should find a book by it"s id ', ()=>{
         const ParamID = 6;
         return request(app)
         .get(`/api/v1/books/findBooks/${ParamID}`)
@@ -78,7 +78,7 @@ describe('GET /findBooks/:id', ()=>{
 })
 
 describe('UPDATE /updateBook/:id', ()=>{
-    it('responds with json', ()=>{
+    it('should update a book by it"s id', ()=>{
         const paramID = 6;
         return request(app)
         .put(`/api/v1/books/updateBook/${paramID}`)
@@ -90,7 +90,7 @@ describe('UPDATE /updateBook/:id', ()=>{
 })
 
 describe('DELETE deleteBook/:id', ()=>{
-    it('responds with json', ()=>{
+    it('should delete a book by it"s id', ()=>{
         const ParamID = 6;
         request(app)
         .delete(`/api/v1/books/deleteBook/${ParamID}`)
