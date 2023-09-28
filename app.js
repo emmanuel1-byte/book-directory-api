@@ -1,6 +1,5 @@
 var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -15,7 +14,9 @@ var cors = require('cors');
 //Db connect
 const db = require('../../BackendProjects/BookDirectory-Api/db/connection');
 
-var booksRouter = require('./routes/book_api/v1/books')
+var authRouter = require('./routes/auth.route');
+var booksRouter = require('./routes/book.route');
+
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.use(session({
 
 app.use(passport.authenticate('session'));
 
+app.use('/', authRouter);
 app.use('/', booksRouter);
 
 /* 

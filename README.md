@@ -43,5 +43,5 @@ This is a Book Directory API built with Nodejs + express js
 - passportjs - the Authentication middleware
 
 
-# Api Documentation
--  https://www.postman.com/cloudy-escape-698934/workspace/emmanuel/collection/24822385-ae4afb23-91fc-414e-9538-33dc3cd80493
+<!-- # Api Documentation
+-  https://www.postman.com/cloudy-escape-698934/workspace/emmanuel/collection/24822385-ae4afb23-91fc-414e-9538-33dc3cd80493 -->

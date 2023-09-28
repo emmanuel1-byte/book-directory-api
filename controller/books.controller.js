@@ -1,3 +1,4 @@
+const passport = require('passport');
 let db = require('../db/connection');
 const {ParameterizedQuery : PQ} = require('pg-promise');
 
@@ -27,13 +28,14 @@ const findbook = (req, res, next)=>{
     })
 
 }
-
 const addBook = (req, res, next)=>{
-    const query = new PQ({ text: "INSERT INTO booktb(author_name, author_email, book_title) VALUES($1, $2, $3) ", values:[
+    const query = new PQ({ text: "INSERT INTO booktb(author_name, author_email, book_title) VALUES($1, $2, $3)", values:[
         req.body.author_name,
         req.body.author_email,
-        req.body.book_title
+        req.body.book_title,
+        
     ]})
+    console.log(req.user.id)
     db.none(query).then(()=>{
         return res.status(201).json({
             succes: "true",

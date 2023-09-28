@@ -14,4 +14,4 @@ const connection = pgp({
 
 
 /*Exporting the Database Object for Shared Import */
-module.exports = connection;
+module.exports = connection ;

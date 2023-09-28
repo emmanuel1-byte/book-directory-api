@@ -1,4 +1,5 @@
 CREATE TABLE session(
-id serial PRIMARY KEY,
-data_value text,
+sid bytea PRIMARY KEY,
+sess varchar,
+expire timestamp with time zone
 )

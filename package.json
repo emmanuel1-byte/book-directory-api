@@ -5,7 +5,8 @@
   "scripts": {
     "start": "set NODE_ENV=production&&node ./bin/www ",
     "dev": "set NODE_ENV=development&&nodemon ./bin/www ",
-    "test": "mocha 'test\\test.js' "
+    "test" : "mocha"
+    
   },
   "dependencies": {
     "connect-pg-simple": "^9.0.0",

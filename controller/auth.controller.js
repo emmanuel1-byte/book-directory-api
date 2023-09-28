@@ -6,7 +6,7 @@ const { ParameterizedQuery : PQ } = require('pg-promise');
 
 
 const main = (req, res)=>{
-    res.send("Book Api is running....")
+    res.json("Book Api is running....")
 }
 
 
@@ -35,8 +35,7 @@ const signUp = function (req, res, next) {
 
           return  req.login(user, function(err) {
                 if (err) { return next(err); }
-                res.status(201)
-                .json({
+                return res.status(201).json({
                     sucess: "true",
                     message: "user signup was succesfull"
                 })
@@ -85,7 +84,7 @@ passport.use(new LocalStrategy(function verify(username, password, cb){
         })
       
     }).catch((err)=>{
-        console.log(err);
+        return next(err);
     });
 }))
 
@@ -112,12 +111,12 @@ const userLogin = function(req, res, next){
   
 
 const userLogout = (req, res, next)=>{
-    req.logout(function(err){
+     req.logout(function(err){
         if(err){
             return next(err);
         }
 })
-res.status(200).json({
+return res.status(200).json({
     succes : true,
     message : "user logged out"
 })
