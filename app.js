@@ -49,8 +49,12 @@ app.use('/', booksRouter);
 CORS Enabled
 resource from this server can be accessed by any origin 
 */
-app.options('*', cors());
-app.use(cors());
+var options = {
+  origin : "*",
+  methods : "GET, POST, DELETE, PUT",
+  allowedHeaders : "Content-Type"
+}
+app.use(cors(options));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
