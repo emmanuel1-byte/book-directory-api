@@ -1,41 +1,14 @@
-const passport = require('passport');
-let db = require('../db/connection');
+const db = require('../db/connection');
 const {ParameterizedQuery : PQ} = require('pg-promise');
 
 /* Using Parameterized Query */
-const findbook = (req, res, next)=>{
-    const paramID = parseInt(req.params.id);
-  const query =  new PQ({ text : "SELECT * FROM booktb WHERE ID = $1 ", values:[
-  paramID
-    ]});
-
-    db.any(query).then((row)=>{
-        if(row[0]==null){
-            return res.status(404).json({
-                error: "true",
-                message: "book not found"
-            })
-        }else{
-            res.status(200).json({
-                sucess: true,
-                data: row,
-                message: "data succesfully retrieved"
-            })
-        }
-    
-    }).catch((err)=>{
-        return next(err);
-    })
-
-}
 const addBook = (req, res, next)=>{
     const query = new PQ({ text: "INSERT INTO booktb(author_name, author_email, book_title) VALUES($1, $2, $3)", values:[
         req.body.author_name,
         req.body.author_email,
-        req.body.book_title,
+        req.body.book_title
         
     ]})
-    console.log(req.user.id)
     db.none(query).then(()=>{
         return res.status(201).json({
             succes: "true",
@@ -121,7 +94,6 @@ const deleteBook = (req, res, next)=>{
     })
 }
 module.exports = {
-    findbook,
     addBook,
     getBooks,
     updateBook,
