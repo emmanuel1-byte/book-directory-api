@@ -44,4 +44,5 @@ This is a Book Directory API built with Nodejs + express js
 
 
 # Api Documentation
+- [Doc](https://github.com/HilaryEmmanuel/BookDirectory-API/blob/main/BookDirectory-API.postman_collection.json)
 
